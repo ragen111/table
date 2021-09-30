@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./asset/lib/layui/css/layui.css">
+    <link rel="stylesheet" href="./asset/css/index.css">
+</head>
+
+<body>
+    <!-- card by layui -->
+    <div class="layui-card">
+        <div class="layui-card-body">
+            <!-- refresh button -->
+            <button type="button" class="layui-btn layui-btn-sm refresh-btn">REFRESH</button>
+            <!-- create button -->
+            <button type="button" class="layui-btn layui-btn-sm create-btn">CREATE</button>
+            <!-- userlist table -->
+            <table class="layui-table">
+                <colgroup>
+                    <col width="150">
+                    <col width="200">
+                    <col>
+                </colgroup>
+                <thead>
+                    <th></th>
+                    <th>UserName</th>
+                    <th>NickName</th>
+                    <th>Sex</th>
+                    <th>Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- data row dynamic rendering -->
+                </tbody>
+            </table>
+            <!-- pagination section -->
+            <div class="pagination">
+                <select class="select-box">
+                      <option value="3">3条/页</option>
+                      <option value="5">5条/页</option>
+                      <option value="10">10条/页</option>
+                </select>
+                <i class="layui-icon layui-icon-prev"></i>
+                <i class="layui-icon layui-icon-left"></i>
+                <ul>
+                    <!-- pagination pagenum dynamic rendering -->
+                </ul>
+                <i class="layui-icon layui-icon-right"></i>
+                <i class="layui-icon layui-icon-next"></i>
+            </div>
+        </div>
+    </div>
+    <!-- create-user layer by layui -->
+    <script type="text/html" id="createlayer">
+        <form class="layui-form createUser-form" lay-filter="formdata">
+            <!-- username item -->
+            <div class="layui-form-item">
+                <label class="layui-form-label">UserName</label>
+                <div class="layui-input-block">
+                    <input type="text" name="username" autocomplete="off" class="layui-input" lay-verify="required|username">
+                </div>
+            </div>
+            <!-- nickname item -->
+            <div class="layui-form-item">
+                <label class="layui-form-label">NickName</label>
+                <div class="layui-input-block">
+                    <input type="text" name="nickname" autocomplete="off" class="layui-input" lay-verify="nickname">
+                </div>
+            </div>
+            <!-- sex item -->
+            <div class="layui-form-item ">
+                <label class="layui-form-label">Sex</label>
+                <div class="layui-input-block sex-select ">
+                    <input type="radio" name="sex" value="male" title="male">
+                    <input type="radio" name="sex" value="female" title="female">
+                </div>
+            </div>
+            <!-- email item -->
+            <div class="layui-form-item">
+                <label class="layui-form-label">Email</label>
+                <div class="layui-input-block">
+                    <input type="email" name="email" autocomplete="off" class="layui-input" lay-verify="email">
+                </div>
+            </div>
+            <!-- submit button item -->
+            <div class="layui-form-item btn-items">
+                <button class="layui-btn submit-btn" lay-submit lay-filter="formDemo">SUBMIT</button>
+            </div>
+        </form>
+    </script>
+    <script src="./asset/lib/jquery.js"></script>
+    <script src="./asset/lib/layui/layui.js"></script>
+    <script src="./asset/js/index.js"></script>
+
+</body>
+
+</html>
